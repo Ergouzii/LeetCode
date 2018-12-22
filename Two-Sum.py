@@ -7,10 +7,11 @@ class Solution:
         """
         if len(nums) <= 1: # length of nums must be > 1
             return
-        dic = dict(zip(nums, range(len(nums)))) # dict with pairings of each num & its index
+        dic = {}
         for i in range(len(nums)):
             diff = target - nums[i]
-            if diff in nums:
-                result = [dic[diff], dic[nums[i]]]
+            if diff in dic:
+                result = [i, dic[diff]]
                 result.sort()
                 return result
+            dic[nums[i]] = i
