@@ -6,21 +6,14 @@ class Solution:
         """
         if len(strs) == 0:
             return ''
-        len_lis = []
-        for s in strs:
-            len_lis.append(len(s))
-        min_len = min(len_lis)
+        min_len = min(len(s) for s in strs)
         if min_len == 0:
             return ''
-        temp = []
+        prefix_len = -1
         for i in range(min_len):
-            for s in strs:
-                temp.append(s[i])
-            print(temp)
-            if len(set(temp)) != (i + 1): # if not all same
-                temp = temp[:-len(strs)] # pop the different prefixes
-                temp = temp[::len(strs)] # remove duplicate chars
-                return ''.join(temp)
-        print(temp)
-        temp = temp[::len(strs)] # remove duplicate chars
-        return ''.join(temp)
+            current_char = strs[0][i]
+            if all(s[i] == current_char for s in strs):
+                prefix_len = i
+            else:
+                break
+        return '' if prefix_len == -1 else strs[0][: prefix_len+1]
