@@ -11,6 +11,7 @@ class Solution:
         :type l2: ListNode
         :rtype: ListNode
         """
+        # TODO redo this problem to have better understanding on Linked List
         if not l1:
             return l2
         elif not l2:
