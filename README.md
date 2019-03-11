@@ -1,5 +1,8 @@
 # LeetCode
 These are some of my answers to LeetCode problems.
+
+Check out this link to see animations of Leetcode problems: [LeetCodeAnimation](https://github.com/MisterBooo/LeetCodeAnimation).
+
 ## TODOs:  
 A table of indexing for problems later for better readability. 
 
